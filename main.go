@@ -14,7 +14,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(logger.New())
-	app.Use(cors.New())
+	app.Use(cors.New(cors.Config{AllowOrigins: "*"}))
 
 	routes.RandUsers(app)
 
